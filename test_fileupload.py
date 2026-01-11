@@ -14,3 +14,8 @@ def test_fileupload(page: Page):
     assert "File_upload.txt" in file_name
     print("File name matched")
     time.sleep(5)
+
+def test_filedownload(page: Page):
+    file_name="File_upload.txt"
+    page.goto("https://the-internet.herokuapp.com/download")
+    page.click(f"text={file_name}")
